@@ -1,0 +1,22 @@
+h1 {
+  font-family: $font-text;
+  font-size: 145px;
+  font-weight: $font-bold;
+  text-transform: uppercase;
+}
+  
+h2 {
+  font-size: 66px;
+  font-weight: $font-normal;
+  text-transform: uppercase;
+  color: $color-light;
+}
+  
+h3 {
+  font-size: 20px;
+  font-weight: $font-semibold;
+  color: $color-light;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+  

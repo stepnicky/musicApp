@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $color-dark;
+  font-family: $font-text;
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: $font-normal;
+  color: $color-main;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.container {
+  max-width: 740px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.btn {
+  background: $color-danger;
+  color: $color-light;
+  border-radius: $radius;
+  transition: $transition;
+  display: inline-block;
+  padding: 16px 30px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 20px;
+
+  &:hover {
+    background: lighten($color-danger, 3%);
+  }
+}
+  
