@@ -43,22 +43,30 @@
     <section class="subscribe"> 
         <h2 class="title">Subscribe <span>now</span></h2>
         <img src="images/subscribe.jpg" alt="subscribe-image">
-        <div class="btn-wrapper">
-            <a href="#join-now" class="btn btn-join">Join now</a>
-        </div>
-        <div class="album-wrapper">
-            <h2 class="artist-name">Dean</h2>
-            <h2 class="artist-name-2">Hen<span>son</span></h2>
-            <img src="images/artist.jpg" alt="artist-image">
-            <div class="subtitle">
-                <h3>New album</h3>
-                <p>Available only for subscribers</p>
+        <!-- <div class="flex-wrapper"> -->
+            <div class="btn-wrapper">
+                <a href="#join-now" class="btn btn-join">Join now</a>
             </div>
-        </div>
+            <div class="album-wrapper">
+                <h2 class="artist-name">Dean</h2>
+                <h2 class="artist-name-2">Hen<span>son</span></h2>
+                <img src="images/artist.jpg" alt="artist-image">
+                <div class="subtitle">
+                    <h3>New album</h3>
+                    <p>Available only for subscribers</p>
+                </div>
+            </div>
+        <!-- </div> -->
     </section>
 
-    <script id="template-home" type="text/x-handlebars-template">
-        <article class="home-page"> 
+    <footer>
+        <div class="container">
+            <p>All rights reserved</p>
+        </div>
+    </footer>
+
+    <script id="template-song" type="text/x-handlebars-template">
+        <article class="song"> 
             <h3>{{ author }} - {{ title }}</h3>
             <div class="row">
                 <div class="player player-{{ id }} green-audio-player col-12">
@@ -76,6 +84,26 @@
                 </div>
             </div>
         </article>  
+    </script>
+
+    <script id="template-search" type="text/x-handlebars-template">
+        <article class="search">
+            <h2 class="search-title">Search</h2>
+            <form class="search-form">
+                <span>Name </span><input class="search-input" type="text">
+                <button type="submit" class="btn btn-search">Search</button>
+            </form>
+            <h3 class="counter"></h3>
+            
+        </article>
+    </script>
+
+    <script id="template-discover" type="text/x-handlebars-template">
+        <article class="discover">
+            <h2 class="discover-title">Discover</h2>
+            <h3 class="discover-subtitle">Give it a try!</h3>
+
+        </article>
     </script>
 
     <script src="https://cdn.jsdelivr.net/gh/greghub/green-audio-player/dist/js/green-audio-player.min.js"></script>

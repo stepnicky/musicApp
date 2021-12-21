@@ -1,4 +1,6 @@
 import Home from './components/home.js';
+import Search from './components/search.js';
+import Discover from './components/discover.js';
 import { classNames, select, settings } from './settings.js';
 
 const app = {
@@ -9,6 +11,16 @@ const app = {
         for (let song in thisApp.data.songs){
             thisApp.home = new Home(homeContainer, thisApp.data.songs[song]);
         }
+    },
+    initSearch: function () {
+        const thisApp = this;
+        const searchContainer = document.querySelector(select.containerOf.search);
+        thisApp.search = new Search(searchContainer, thisApp.data.songs);
+    },
+    initDiscover: function () {
+        const thisApp = this;
+        
+        thisApp.discover = new Discover(thisApp.data.songs);
     },
     initPages: function () {
         const thisApp = this;
@@ -31,6 +43,10 @@ const app = {
                 const id = clickedElement.getAttribute('href').replace('#', '');
                 thisApp.activatePage(id);
                 window.location.hash = '#/' + id;
+                const discoverLink = document.querySelector('a[href="#discover"]');
+                if(link === discoverLink){
+                    thisApp.initDiscover();
+                }
             });
         }
     },
@@ -58,6 +74,7 @@ const app = {
                 thisApp.data.songs = parsedResponse;
                 console.log('thisApp.data.songs: ', thisApp.data.songs);
                 thisApp.initHome();
+                thisApp.initSearch();
             });
     },
     init: function () {
@@ -65,6 +82,7 @@ const app = {
         console.log('thisApp: ', thisApp);
         thisApp.initPages();
         thisApp.initData();
+        thisApp.initDiscover();
     }
 };
 

@@ -1,14 +1,23 @@
 export const select = {
     templateOf: {
-        homePage: '#template-home',
+        song: '#template-song',
+        search: '#template-search',
+        discover: '#template-discover'
     }, 
     containerOf: {
         home: '.home-wrapper',
+        search: '.search-wrapper',
+        discover: '.discover-wrapper',
         pages: '#pages'
     },
     nav: {
         links: 'nav li a'
     },
+    search: {
+        form: '.search-form',
+        input: '.search-input',
+        counter: '.counter'
+    }
 };
 
 export const classNames = {

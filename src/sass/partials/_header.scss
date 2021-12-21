@@ -3,6 +3,7 @@
 .splash {
   position: relative;
   height: 100vh;
+  width: 100vw;
   margin-bottom: 92px;
   // ::after {
   //     position: absolute;
@@ -26,7 +27,7 @@
 
 .splash-inner {
   position: absolute;
-  left: 52%;
+  left: 50%;
   top: 45%;
   transform: translate(-50%, -50%);
   color: $color-light;
@@ -49,25 +50,29 @@
 // navigation
 
 nav ul {
-    list-style-type: none;
-    margin-left: 36px;
-    li {
-        display: inline-block;
-        margin-right: 56px;
-        a {
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 20px;
-            font-weight: $font-semibold;
-            color: $color-main;
-            &:hover {
-                color: $color-light;
-            }
+  list-style-type: none;
+  margin-left: 56px;
+  padding-left: 0;
+
+  li {
+    display: inline-block;
+    margin-right: 56px;
+
+    a {
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 20px;
+      font-weight: $font-semibold;
+      color: $color-main;
+
+      &:hover {
+        color: $color-light;
+      }
             
-        }
     }
+  }
 }
 
 li > .active {
-    color: $color-light;
+  color: $color-light;
 }

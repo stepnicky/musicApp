@@ -1,5 +1,7 @@
 import { select } from './settings.js';
 
 export const templates = {
-    homePage: Handlebars.compile(document.querySelector(select.templateOf.homePage).innerHTML)
+    song: Handlebars.compile(document.querySelector(select.templateOf.song).innerHTML),
+    search: Handlebars.compile(document.querySelector(select.templateOf.search).innerHTML),
+    discover: Handlebars.compile(document.querySelector(select.templateOf.discover).innerHTML)
 };
