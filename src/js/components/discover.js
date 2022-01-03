@@ -7,6 +7,7 @@ class Discover{
         const thisDiscover = this;
 
         thisDiscover.randomize(data);
+        thisDiscover.initPlayers(data);
     }
     randomize(data){
         const thisDiscover = this;
@@ -17,6 +18,8 @@ class Discover{
         for(let song of data){
             if(randomNumber === song.id){
                 thisDiscover.render(song);
+                // eslint-disable-next-line
+                thisDiscover.player = new GreenAudioPlayer('.discoverPlayer-' + song.id);
             }
         }
 
@@ -32,7 +35,7 @@ class Discover{
 
         thisDiscover.dom.wrapper.innerHTML = generatedHTML;
 
-        const songHTML = templates.song(song);
+        const songHTML = templates.discoverSong(song);
         const generatedSong = utils.createDOMFromHTML(songHTML);
         thisDiscover.dom.wrapper.appendChild(generatedSong);
 

@@ -1,37 +1,61 @@
 
+@media (max-width: 700px) {
+  // splash
+
+  .splash-inner {
+    left: 54%;
+    h1 {
+      font-size: 80px;
+    }
+    p {
+      font-size: 20px;
+    }
+  }
+}
+
+
 // subscribe
 
 @media (max-width: 1058px) {
-    .subscribe {
-        .btn-wrapper {
-          position: absolute;
-          top: 37%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          z-index: 2;
-        }
-        .album-wrapper {
-          position: absolute;
-          left: 50%;
-          transform: translate(-50%, 0);
-          .artist-name {
-              top: 40%;
-              left: 25%;
-          }
-          .artist-name-2 {
-              top: 53%;
-              left: 15%;
-          }
-          .subtitle {
-              text-align: center;
-              right: 20%;
-              h3 {
-                  font-size: 25px;
-              }
-              p {
-                  font-size: 20px;
-              }
-          }
-        }
+  .subscribe {
+    .title {
+      font-size: 46px;
     }
+    .btn-wrapper {
+      position: absolute;
+      top: 37%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
+    }
+
+    .album-wrapper {
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 0);
+
+      .artist-name {
+        top: 40%;
+        left: 25%;
+      }
+
+      .artist-name-2 {
+        top: 53%;
+        left: 15%;
+      }
+
+      .subtitle {
+        text-align: center;
+        right: 20%;
+
+        h3 {
+          font-size: 25px;
+        }
+
+        p {
+          font-size: 20px;
+        }
+      }
+    }
+  }
 }

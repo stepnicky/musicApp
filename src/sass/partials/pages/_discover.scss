@@ -1,13 +1,25 @@
 .discover {
-    margin-top: 45px;
+  margin-top: 45px;
     
-    .discover-title {
-        font-size: 40px;
-        margin-bottom: 20px;
-        letter-spacing: 5px;
-        color: $color-main;
-    }
-    .discover-subtitle {
-        letter-spacing: 3px;
-    }
+  .discover-title {
+    font-size: 40px;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+    color: $color-main;
+  }
+
+  .discover-subtitle {
+    letter-spacing: 3px;
+  }
+}
+
+.discoverSong {
+  max-width: 50%;
+  margin: auto;
+}
+
+div[class^='discoverPlayer'], div[class*='discoverPlayer'] {
+  height: 47px;
+  width: 100%;
+  margin: 20px auto;
 }

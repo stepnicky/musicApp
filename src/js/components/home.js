@@ -6,7 +6,7 @@ class Home {
     constructor(element, data){
         const thisHome = this;
         thisHome.renderSongs(element, data);
-        thisHome.initPlayers();
+        thisHome.initPlayers(data);
         
         
         console.log('data', data);
@@ -17,21 +17,21 @@ class Home {
         thisHome.dom = {};
         thisHome.dom.wrapper = element;
 
-        const generatedHTML = templates.song(data);
+        const generatedHTML = templates.homeSong(data);
         thisHome.element = utils.createDOMFromHTML(generatedHTML);
         console.log('thisHome.element: ', thisHome.element);
         
 
         thisHome.dom.wrapper.appendChild(thisHome.element);
     }
-    initPlayers(){
-       
-        // thisHome.audioPlayer = new GreenAudioPlayer('.player');
-
-        GreenAudioPlayer.init({
-            selector: '.player', // inits Green Audio Player on each audio container that has class "player"
-            stopOthersOnPlay: true
-        });
+    initPlayers(data){
+        const thisHome = this;
+        // eslint-disable-next-line
+        thisHome.player = new GreenAudioPlayer('.player-' + data.id);
+        // thisHome.player.init({
+        //     selector: '.player-' + data.id, // inits Green Audio Player on each audio container that has class "player"
+        //     stopOthersOnPlay: true
+        // });
     }
 }
 

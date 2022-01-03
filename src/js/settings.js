@@ -1,8 +1,10 @@
 export const select = {
     templateOf: {
-        song: '#template-song',
+        homeSong: '#template-home-song',
+        searchSong: '#template-search-song',
+        discoverSong: '#template-discover-song',
         search: '#template-search',
-        discover: '#template-discover'
+        discover: '#template-discover',
     }, 
     containerOf: {
         home: '.home-wrapper',

@@ -7,8 +7,8 @@ class Search {
         const thisSearch = this;
 
         thisSearch.render(element);
+        
         thisSearch.initActions(data);
-        thisSearch.initPlayers();
     }
     render(element) {
         const thisSearch = this;
@@ -24,11 +24,9 @@ class Search {
     initActions(data) {
         const thisSearch = this;
 
-        
-        
         thisSearch.dom.form.addEventListener('submit', function (){
             
-            const generatedSongs = thisSearch.dom.container.querySelectorAll('article.song');
+            const generatedSongs = thisSearch.dom.container.querySelectorAll('article.searchSong');
             for ( let song of generatedSongs){
                 song.remove();
             }
@@ -43,25 +41,21 @@ class Search {
                 }
             }
             console.log(searchedSongs.length);
-            const ifPlural = searchedSongs.length>1 ? 's' : '';
+            const ifPlural = searchedSongs.length>1 || searchedSongs.length<1 ? 's' : '';
             const counterAlert = 'We have found ' + searchedSongs.length + ' song' + ifPlural + '...';
             thisSearch.dom.counter.innerHTML = counterAlert;
             console.log('searchedSongs: ', searchedSongs);
             for(let searchedSong of searchedSongs){
-                const generatedHTML = templates.song(searchedSong);
+                const generatedHTML = templates.searchSong(searchedSong);
                 const generatedSong = utils.createDOMFromHTML(generatedHTML);
                 thisSearch.dom.container.appendChild(generatedSong);
+                // eslint-disable-next-line
+                thisSearch.player = new GreenAudioPlayer('.searchPlayer-' + searchedSong.id);
             }
         });
 
     }
-    initPlayers(){
     
-        GreenAudioPlayer.init({
-            selector: '.player', // inits Green Audio Player on each audio container that has class "player"
-            stopOthersOnPlay: true
-        });
-    }
 }
 
 export default Search;
